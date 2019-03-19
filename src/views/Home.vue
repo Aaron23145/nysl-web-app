@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <h1>Home page</h1>
+    <button>Select your team</button>
+    <button>Select a day</button>
+    <button>Select your location</button>
   </div>
 </template>
 
@@ -9,3 +11,9 @@ export default {
   name: 'Home'
 }
 </script>
+
+<style>
+.home button {
+  margin: 25px auto;
+}
+</style>

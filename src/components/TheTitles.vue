@@ -15,6 +15,9 @@ export default {
 .the-titles {
   display: flex;
   justify-content: space-between;
+  background: var(--main-blue);
+  color: white;
+  padding: 0 10px;
 }
 
 .the-titles h2,
