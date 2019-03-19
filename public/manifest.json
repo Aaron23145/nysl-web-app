@@ -1,5 +1,9 @@
 {
   "name": "NYSL Game Information",
+  "description": "View NYSL's games information easily and comfortably.",
+  "dir": "ltr",
+  "lang": "en",
+  ​​"orientation": "portrait",
   "short_name": "NYSL GI",
   "icons": [
     {

@@ -3,6 +3,7 @@ module.exports = {
 
   pwa: {
     name: 'NYSL Game Information',
-    themeColor: '#2200FF'
+    themeColor: '#047073',
+    msTileColor: '#047073'
   }
 }
