@@ -5,12 +5,18 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-
+    status: 'loading',
+    data: null
   },
   mutations: {
-
-  },
-  actions: {
-
+    dataLoaded (state) {
+      state.status = 'ready'
+    },
+    dataError (state) {
+      state.status = 'error'
+    },
+    saveData (state, newData) {
+      state.data = newData
+    }
   }
 })

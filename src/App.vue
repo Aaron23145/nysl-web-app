@@ -1,10 +1,16 @@
 <template>
   <div>
-    <header>
-      <TheTitles />
-      <TheBreadcrumb />
-    </header>
-    <TheView />
+    <TheLoading v-if="status === 'loading'" />
+
+    <TheError v-else-if="status === 'error'" />
+
+    <div v-else>
+      <header>
+        <TheTitles />
+        <TheBreadcrumb />
+      </header>
+      <TheView />
+    </div>
   </div>
 </template>
 
@@ -12,14 +18,41 @@
 import TheTitles from './components/TheTitles'
 import TheBreadcrumb from './components/TheBreadcrumb'
 import TheView from './components/TheView'
+import TheLoading from './components/TheLoading'
+import TheError from './components/TheError'
+
+import { mapState, mapMutations } from 'vuex'
+import axios from 'axios'
+
+const API_URL = 'https://nysl-rest-api.herokuapp.com/'
 
 export default {
   name: 'App',
   components: {
     TheTitles,
     TheBreadcrumb,
-    TheView
-  }
+    TheView,
+    TheLoading,
+    TheError
+  },
+  computed: mapState([
+    'status'
+  ]),
+  created () {
+    axios.get(API_URL).then(response => {
+      this.dataLoaded()
+      this.saveData(response.data)
+    }).catch(error => {
+      this.dataError()
+      console.error('An error ocurred:')
+      console.error(error)
+    })
+  },
+  methods: mapMutations([
+    'dataLoaded',
+    'dataError',
+    'saveData'
+  ])
 }
 </script>
 
