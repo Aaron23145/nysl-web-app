@@ -28,13 +28,13 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    setView (context, receivedView) {
+    setView (context, component) {
       const bc = context.state.breadcrumb
       const view = {
-        name: receivedView.displayedName,
-        path: receivedView.pathName,
-        depth: receivedView.depth,
-        id: receivedView._uid
+        name: component.viewInfo.displayedName,
+        path: component.viewInfo.pathName,
+        depth: component.viewInfo.depth,
+        id: component._uid
       }
       const depth = view.depth
 

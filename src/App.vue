@@ -72,7 +72,6 @@ export default {
 body {
   margin: 0;
   font-family: 'Ubuntu', sans-serif;
-  overflow: hidden;
 }
 
 .button {

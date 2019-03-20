@@ -5,26 +5,19 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
-
-const componentName = 'TeamList'
+import { breadcrumbView } from '../mixins'
 
 export default {
-  name: componentName,
+  name: 'TeamList',
+  mixins: [breadcrumbView],
   data () {
     return {
-      depth: 0,
-      displayedName: 'Teams',
-      pathName: 'teamList'
+      viewInfo: {
+        depth: 0,
+        displayedName: 'Teams',
+        pathName: 'teamList'
+      }
     }
-  },
-  methods: mapActions([
-    'setView'
-  ]),
-  beforeRouteEnter (to, from, next) {
-    next(vm => {
-      vm.setView(vm)
-    })
   }
 }
 </script>
