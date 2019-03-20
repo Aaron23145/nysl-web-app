@@ -1,8 +1,14 @@
 <template>
   <div class="home">
-    <button>Select your team</button>
-    <button>Select a day</button>
-    <button>Select your location</button>
+    <button class="button">
+      Select your team
+    </button>
+    <button class="button">
+      Select a day
+    </button>
+    <button class="button">
+      Select your location
+    </button>
   </div>
 </template>
 

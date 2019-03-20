@@ -1,16 +1,10 @@
 <template>
   <div>
-    <TheLoading v-if="status === 'loading'" />
-
-    <TheError v-else-if="status === 'error'" />
-
-    <div v-else>
-      <header>
-        <TheTitles />
-        <TheBreadcrumb />
-      </header>
-      <TheView />
-    </div>
+    <header v-if="status === 'ready'">
+      <TheTitles />
+      <TheBreadcrumb />
+    </header>
+    <TheView />
   </div>
 </template>
 
@@ -18,8 +12,6 @@
 import TheTitles from './components/TheTitles'
 import TheBreadcrumb from './components/TheBreadcrumb'
 import TheView from './components/TheView'
-import TheLoading from './components/TheLoading'
-import TheError from './components/TheError'
 
 import { mapState, mapMutations } from 'vuex'
 import axios from 'axios'
@@ -31,22 +23,28 @@ export default {
   components: {
     TheTitles,
     TheBreadcrumb,
-    TheView,
-    TheLoading,
-    TheError
+    TheView
   },
   computed: mapState([
     'status'
   ]),
   created () {
-    axios.get(API_URL).then(response => {
-      this.dataLoaded()
-      this.saveData(response.data)
-    }).catch(error => {
-      this.dataError()
-      console.error('An error ocurred:')
-      console.error(error)
-    })
+    if (this.status === 'loading') {
+      this.$router.replace({ name: 'loading' })
+
+      axios.get(API_URL).then(response => {
+        this.dataLoaded()
+        this.saveData(response.data)
+        this.$router.replace({ name: 'home' })
+      }).catch(error => {
+        this.dataError()
+        console.error('An error ocurred:')
+        console.error(error)
+        this.$router.replace({ name: 'errorNetwork' })
+      })
+    } else if (this.status === 'error') {
+      this.$router.replace({ name: 'errorNetwork' })
+    }
   },
   methods: mapMutations([
     'dataLoaded',
@@ -77,10 +75,11 @@ body {
   overflow: hidden;
 }
 
-button {
+.button {
   display: block;
   font-size: 1.5rem;
-  padding: 20px;
+  width: 80%;
+  height: 10vh;
   background: var(--main-pink);
   border: 0 solid var(--main-pink);
   border-bottom-color: var(--main-dark-pink);
@@ -88,12 +87,12 @@ button {
   color: white;
 }
 
-button:active {
+.button:active {
   border-top-width: 4px;
   border-bottom-width: 0;
 }
 
-button:focus {
+.button:focus {
   outline: none;
 }
 </style>

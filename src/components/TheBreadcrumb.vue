@@ -1,12 +1,20 @@
 <template>
   <nav class="the-breadcrumb">
-    <router-link to="/">
-      Home
+    <router-link
+      tag="button"
+      to="/"
+      class="the-breadcrumb__link"
+    >
+      <i class="fas fa-home" />
     </router-link>
-    <router-link to="/about">
+    <!-- <router-link
+      tag="button"
+      to="/about"
+      class="the-breadcrumb__link"
+    >
       About
-    </router-link>
-</nav>
+    </router-link> -->
+  </nav>
 </template>
 
 <script>
@@ -21,14 +29,20 @@ export default {
   padding: 0 10px;
 }
 
-nav a {
+button.the-breadcrumb__link {
   color: white;
   display: inline-block;
+  border: none;
   text-decoration: none;
   margin: 0 5px;
   padding: 5px 3px 5px 18px;
   position: relative;
   height: 30px;
+  outline: none;
+}
+
+button.the-breadcrumb__link:not(.router-link-exact-active) {
+  background: transparent;
 }
 
 .router-link-exact-active {

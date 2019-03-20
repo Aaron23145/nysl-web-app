@@ -14,9 +14,19 @@ export default new Router({
       component: Home
     },
     {
-      path: '/about',
-      name: 'about',
-      component: () => import('./views/About.vue')
+      path: '/loading',
+      name: 'loading',
+      component: () => import('./views/Loading.vue')
+    },
+    {
+      path: '/error/network',
+      name: 'errorNetwork',
+      component: () => import('./views/ErrorNetwork.vue')
     }
+    // {
+    //   path: '/about',
+    //   name: 'about',
+    //   component: () => import('./views/About.vue')
+    // }
   ]
 })

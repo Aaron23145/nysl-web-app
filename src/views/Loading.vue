@@ -1,9 +1,9 @@
 <template>
-  <div class="the-loading">
-    <div class="the-loading__icon-div">
-      <i class="the-loading__icon fas fa-circle-notch" />
+  <div class="loading">
+    <div class="loading__icon-div">
+      <i class="loading__icon fas fa-circle-notch" />
     </div>
-    <div class="the-loading__text-div">
+    <div class="loading__text-div">
       Loading...<br>Please, wait.
     </div>
   </div>
@@ -11,12 +11,12 @@
 
 <script>
 export default {
-  name: 'TheLoading'
+  name: 'Loading'
 }
 </script>
 
 <style>
-.the-loading {
+.loading {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -26,12 +26,12 @@ export default {
   color: var(--main-blue);
 }
 
-.the-loading__icon{
+.loading__icon{
   animation: circle-spin infinite 2s linear;
   font-size: 5rem;
 }
 
-.the-loading__icon-div {
+.loading__icon-div {
   padding-bottom: 30px;
 }
 
@@ -43,5 +43,4 @@ export default {
     transform: rotate(360deg);
   }
 }
-
 </style>
