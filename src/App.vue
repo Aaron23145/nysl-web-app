@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app">
     <header v-if="status === 'ready'">
       <TheTitles />
       <TheBreadcrumb />
@@ -59,6 +59,7 @@ export default {
 
 * {
   box-sizing: border-box;
+  user-select: none;
 }
 
 :root {
@@ -84,6 +85,14 @@ body {
   border-bottom-color: var(--main-dark-pink);
   border-bottom-width: 4px;
   color: white;
+  margin: 25px auto;
+}
+
+.button--small {
+  font-size: 1.2rem;
+  height: 7vh;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .button:active {
@@ -93,5 +102,11 @@ body {
 
 .button:focus {
   outline: none;
+}
+
+.flex-button-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 </style>

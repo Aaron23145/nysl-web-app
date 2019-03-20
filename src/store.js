@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+import { removeDuplicates } from './utils'
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -8,6 +10,32 @@ export default new Vuex.Store({
     status: 'loading',
     data: null,
     breadcrumb: []
+  },
+  getters: {
+    datesWithGames (state) {
+      function splitDates (date) {
+        const dateSplitted = date.split('/')
+        return {
+          month: dateSplitted[0],
+          day: dateSplitted[1]
+        }
+      }
+
+      const dates = state.data.map(game => game.date)
+      const uniqueDates = removeDuplicates(dates)
+      return uniqueDates.map(splitDates)
+    },
+    teams (state) {
+      const teams = state.data.map(game => game.teams)
+      const teamList = teams.flat(Infinity)
+      const uniqueTeamList = removeDuplicates(teamList)
+      return uniqueTeamList.sort()
+    },
+    locations (state) {
+      const locations = state.data.map(game => game.location)
+      const uniqueLocations = removeDuplicates(locations)
+      return uniqueLocations
+    }
   },
   mutations: {
     dataLoaded (state) {

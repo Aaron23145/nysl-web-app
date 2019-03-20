@@ -29,9 +29,3 @@ export default {
   name: 'Home'
 }
 </script>
-
-<style>
-.home button {
-  margin: 25px auto;
-}
-</style>
