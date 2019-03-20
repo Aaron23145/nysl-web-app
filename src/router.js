@@ -22,11 +22,21 @@ export default new Router({
       path: '/error/network',
       name: 'errorNetwork',
       component: () => import('./views/ErrorNetwork.vue')
+    },
+    {
+      path: '/teams',
+      name: 'teamList',
+      component: () => import('./views/TeamList.vue')
+    },
+    {
+      path: '/days',
+      name: 'dayList',
+      component: () => import('./views/DayList.vue')
+    },
+    {
+      path: '/locations',
+      name: 'locationList',
+      component: () => import('./views/LocationList.vue')
     }
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   component: () => import('./views/About.vue')
-    // }
   ]
 })

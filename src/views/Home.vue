@@ -1,14 +1,26 @@
 <template>
   <div class="home">
-    <button class="button">
+    <router-link
+      tag="button"
+      :to="{ name: 'teamList' }"
+      class="button"
+    >
       Select your team
-    </button>
-    <button class="button">
+    </router-link>
+    <router-link
+      tag="button"
+      :to="{ name: 'dayList' }"
+      class="button"
+    >
       Select a day
-    </button>
-    <button class="button">
+    </router-link>
+    <router-link
+      tag="button"
+      :to="{ name: 'locationList' }"
+      class="button"
+    >
       Select your location
-    </button>
+    </router-link>
   </div>
 </template>
 

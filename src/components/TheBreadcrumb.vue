@@ -3,23 +3,30 @@
     <router-link
       tag="button"
       to="/"
-      class="the-breadcrumb__link"
+      class="the-breadcrumb__link the-breadcrumb__link--home"
     >
       <i class="fas fa-home" />
     </router-link>
-    <!-- <router-link
+    <router-link
+      v-for="entry of breadcrumb"
+      :key="entry.id"
       tag="button"
-      to="/about"
+      :to="{ name: entry.path }"
       class="the-breadcrumb__link"
     >
-      About
-    </router-link> -->
+      {{ entry.name }}
+    </router-link>
   </nav>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
-  name: 'TheBreadcrumb'
+  name: 'TheBreadcrumb',
+  computed: mapState([
+    'breadcrumb'
+  ])
 }
 </script>
 
@@ -58,7 +65,7 @@ button.the-breadcrumb__link:not(.router-link-exact-active) {
   border: 15px solid transparent;
 }
 
-.router-link-exact-active::before {
+.router-link-exact-active:not(.the-breadcrumb__link--home)::before {
   left: 0;
   transform: translateY(-50%);
   border-left-color: var(--main-light-blue);
