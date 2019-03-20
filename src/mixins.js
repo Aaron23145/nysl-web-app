@@ -1,6 +1,12 @@
 import { mapActions } from 'vuex'
 
 export const breadcrumbView = {
+  props: {
+    viewInfo: {
+      type: Object,
+      required: true
+    }
+  },
   methods: mapActions([
     'setView'
   ]),

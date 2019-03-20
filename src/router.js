@@ -26,17 +26,38 @@ export default new Router({
     {
       path: '/teams',
       name: 'teamList',
-      component: () => import('./views/TeamList.vue')
+      props: {
+        viewInfo: {
+          depth: 0,
+          displayedName: 'Teams',
+          pathName: 'teamList'
+        }
+      },
+      component: () => import('./views/Teams/TeamList.vue')
     },
     {
       path: '/days',
       name: 'dayList',
-      component: () => import('./views/DayList.vue')
+      props: {
+        viewInfo: {
+          depth: 0,
+          displayedName: 'Days',
+          pathName: 'dayList'
+        }
+      },
+      component: () => import('./views/Days/DayList.vue')
     },
     {
       path: '/locations',
       name: 'locationList',
-      component: () => import('./views/LocationList.vue')
+      props: {
+        viewInfo: {
+          depth: 0,
+          displayedName: 'Locations',
+          pathName: 'locationList'
+        }
+      },
+      component: () => import('./views/Locations/LocationList.vue')
     }
   ]
 })
