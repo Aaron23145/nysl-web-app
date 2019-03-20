@@ -1,12 +1,14 @@
 <template>
   <div class="team-list flex-button-column">
-    <button
+    <router-link
       v-for="team of teams"
       :key="team"
+      :to="{ name: 'teamNext', params: {team} }"
+      tag="button"
       class="button button--small"
     >
       {{ team }}
-    </button>
+    </router-link>
   </div>
 </template>
 

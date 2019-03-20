@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import _ from 'lodash'
 
 import { removeDuplicates } from './utils'
 
@@ -62,11 +63,11 @@ export default new Vuex.Store({
         name: component.viewInfo.displayedName,
         path: component.viewInfo.pathName,
         depth: component.viewInfo.depth,
-        id: component._uid
+        params: component.$route && component.$route.params
       }
       const depth = view.depth
 
-      if ((bc[depth] && bc[depth].id) !== view.id) {
+      if (((bc[depth] && bc[depth].path) !== view.path) || (bc[depth] && (!_.isEqual(bc[depth].params, view.params)))) {
         context.commit('resetBcToDepth', depth)
         context.commit('addViewToBc', view)
       }

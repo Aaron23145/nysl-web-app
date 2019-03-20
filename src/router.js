@@ -36,6 +36,18 @@ export default new Router({
       component: () => import('./views/Teams/TeamList.vue')
     },
     {
+      path: '/teams/:team/next',
+      name: 'teamNext',
+      props: {
+        viewInfo: {
+          depth: 1,
+          displayedName: 'Next',
+          pathName: 'teamNext'
+        }
+      },
+      component: () => import('./views/Teams/TeamNext.vue')
+    },
+    {
       path: '/days',
       name: 'dayList',
       props: {
