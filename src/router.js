@@ -70,6 +70,18 @@ export default new Router({
         }
       },
       component: () => import('./views/Locations/LocationList.vue')
+    },
+    {
+      path: '/locations/:location/next',
+      name: 'locationNext',
+      props: {
+        viewInfo: {
+          depth: 1,
+          displayedName: 'Next',
+          pathName: 'locationNext'
+        }
+      },
+      component: () => import('./views/Locations/LocationNext.vue')
     }
   ]
 })

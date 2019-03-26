@@ -1,12 +1,14 @@
 <template>
   <div class="location-list flex-button-column">
-    <button
+    <router-link
       v-for="location of locations"
       :key="location"
+      :to="{ name: 'locationNext', params: {location} }"
+      tag="button"
       class="button button--small"
     >
       {{ location }}
-    </button>
+    </router-link>
   </div>
 </template>
 

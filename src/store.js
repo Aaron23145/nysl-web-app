@@ -67,7 +67,9 @@ export default new Vuex.Store({
       }
       const depth = view.depth
 
-      if (((bc[depth] && bc[depth].path) !== view.path) || (bc[depth] && (!_.isEqual(bc[depth].params, view.params)))) {
+      const differentPath = (bc[depth] && bc[depth].path) !== view.path
+      const differentParams = bc[depth] && (!_.isEqual(bc[depth].params, view.params))
+      if (differentPath || differentParams) {
         context.commit('resetBcToDepth', depth)
         context.commit('addViewToBc', view)
       }
