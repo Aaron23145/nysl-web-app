@@ -1,10 +1,15 @@
 <template>
   <div class="app">
-    <header v-if="status === 'ready'">
-      <TheTitles />
-      <TheBreadcrumb />
-    </header>
-    <TheView />
+    <div class="valid-device">
+      <header v-if="status === 'ready'">
+        <TheTitles />
+        <TheBreadcrumb />
+      </header>
+      <TheView />
+    </div>
+    <div class="invalid-device">
+      This app doesn't support desktop sized screens or landscape mode.
+    </div>
   </div>
 </template>
 
@@ -70,7 +75,7 @@ export default {
   --main-lighter-blue: #86E0DD;
 }
 
-html, body, .app {
+html, body, .app, .app > div {
   height: 100%;
 }
 
@@ -82,6 +87,20 @@ body {
 .app {
   display: flex;
   flex-direction: column;
+}
+
+.invalid-device {
+  display: none;
+}
+
+@media (min-width: 992px), (orientation: landscape) {
+  .valid-device {
+    display: none;
+  }
+
+  .invalid-device {
+    display: block;
+  }
 }
 
 .button {
