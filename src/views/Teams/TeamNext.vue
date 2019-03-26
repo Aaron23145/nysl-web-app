@@ -1,15 +1,24 @@
 <template>
-  <div>
-    Team Next Game
-    {{ $route.params.team }}
-  </div>
+  <GameDetail
+    :game="gamesOfTeam($route.params.team)[0]"
+    from="team"
+  />
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 import { breadcrumbView } from '../../mixins.js'
+import GameDetail from '../../components/GameDetail'
 
 export default {
   name: 'TeamNext',
-  mixins: [breadcrumbView]
+  components: {
+    GameDetail
+  },
+  mixins: [breadcrumbView],
+  computed: mapGetters([
+    'gamesOfTeam'
+  ])
 }
 </script>

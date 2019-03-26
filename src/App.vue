@@ -70,9 +70,18 @@ export default {
   --main-lighter-blue: #86E0DD;
 }
 
+html, body, .app {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: 'Ubuntu', sans-serif;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
 }
 
 .button {

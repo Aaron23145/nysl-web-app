@@ -36,6 +36,16 @@ export default new Vuex.Store({
       const locations = state.data.map(game => game.location)
       const uniqueLocations = removeDuplicates(locations)
       return uniqueLocations
+    },
+    gamesOfTeam: (state) => (team) => {
+      return state.data.filter(function (game) {
+        return game.teams.includes(team)
+      })
+    },
+    gamesOfLocation: (state) => (location) => {
+      return state.data.filter(function (game) {
+        return game.location === location
+      })
     }
   },
   mutations: {
