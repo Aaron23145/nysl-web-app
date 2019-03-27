@@ -34,6 +34,16 @@ export function formatDay (dayNumber) {
   }
 }
 
+export function formatDate (date, separator = ' ') {
+  const [month, day] = date.split('/')
+  return `${formatMonth(month)}${separator}${formatDay(day)}`
+}
+
+export function formatTeams (teams, separator = ' vs ') {
+  const [team1, team2] = teams
+  return `${team1}${separator}${team2}`
+}
+
 export function removeDuplicates (array) {
   return [...new Set(array)]
 }

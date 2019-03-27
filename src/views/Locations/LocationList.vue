@@ -1,26 +1,24 @@
 <template>
-  <OptionList
-    v-slot:default="slotProps"
-    class="location-list"
-    :list="locations"
-    next-view="locationNext"
-    param-name="location"
-  >
-    {{ slotProps.item }}
-  </OptionList>
+  <div>
+    <router-link
+      v-for="location of locations"
+      :key="location"
+      :to="{ name: 'locationNext', params: {location} }"
+      tag="button"
+      class="button button--small"
+    >
+      {{ location }}
+    </router-link>
+  </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 
 import { breadcrumbView } from '../../mixins'
-import OptionList from '../../components/OptionsList'
 
 export default {
   name: 'LocationList',
-  components: {
-    OptionList
-  },
   mixins: [breadcrumbView],
   computed: mapGetters([
     'locations'

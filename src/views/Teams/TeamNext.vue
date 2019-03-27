@@ -2,6 +2,7 @@
   <GameDetail
     :game="gamesOfTeam($route.params.team)[0]"
     from="team"
+    :next-view="{ name: 'teamNextList', params: { team: $route.params.team } }"
   />
 </template>
 

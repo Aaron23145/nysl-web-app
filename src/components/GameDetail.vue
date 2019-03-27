@@ -6,7 +6,7 @@
         <span v-else>Next {{ from | capitalize }} Game</span>
       </div>
       <div class="game-detail__big-text">
-        {{ game.teams[0] }} vs {{ game.teams[1] }}
+        {{ formatTeams(game.teams) }}
       </div>
     </div>
     <div>
@@ -32,15 +32,21 @@
         {{ game.time.toUpperCase() }}
       </div>
     </div>
-    <button class="button">
+    <router-link
+      v-if="nextView"
+      :to="nextView"
+      tag="button"
+      class="button"
+    >
       More Games
-    </button>
+    </router-link>
+    <span v-else>&nbsp;</span>
   </div>
 </template>
 
 <script>
 import LocationMap from './LocationMap'
-import { formatMonth, formatDay } from '../utils.js'
+import { formatMonth, formatDay, formatTeams } from '../utils.js'
 
 export default {
   name: 'GameDetail',
@@ -55,11 +61,16 @@ export default {
     from: {
       type: String,
       default: null
+    },
+    nextView: {
+      type: Object,
+      default: null
     }
   },
   methods: {
     formatMonth,
-    formatDay
+    formatDay,
+    formatTeams
   }
 }
 </script>

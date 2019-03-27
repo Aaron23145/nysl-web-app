@@ -13,7 +13,6 @@ export default {
 <style>
 .the-view {
   margin: 10px;
-  /* height: 100%; */
-  flex-grow: 1;
+  flex: 1;
 }
 </style>

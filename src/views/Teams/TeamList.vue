@@ -1,26 +1,24 @@
 <template>
-  <OptionList
-    v-slot:default="slotProps"
-    class="team-list"
-    :list="teams"
-    next-view="teamNext"
-    param-name="team"
-  >
-    {{ slotProps.item }}
-  </OptionList>
+  <div>
+    <router-link
+      v-for="team of teams"
+      :key="team"
+      :to="{ name: 'teamNext', params: {team} }"
+      tag="button"
+      class="button button--small"
+    >
+      {{ team }}
+    </router-link>
+  </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 
 import { breadcrumbView } from '../../mixins'
-import OptionList from '../../components/OptionsList'
 
 export default {
   name: 'TeamList',
-  components: {
-    OptionList
-  },
   mixins: [breadcrumbView],
   computed: mapGetters([
     'teams'

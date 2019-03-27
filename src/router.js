@@ -48,6 +48,18 @@ export default new Router({
       component: () => import('./views/Teams/TeamNext.vue')
     },
     {
+      path: '/teams/:team/next/list',
+      name: 'teamNextList',
+      props: {
+        viewInfo: {
+          depth: 2,
+          displayedName: 'List',
+          pathName: 'teamNextList'
+        }
+      },
+      component: () => import('./views/Teams/TeamNextList.vue')
+    },
+    {
       path: '/days',
       name: 'dayList',
       props: {
@@ -82,6 +94,18 @@ export default new Router({
         }
       },
       component: () => import('./views/Locations/LocationNext.vue')
+    },
+    {
+      path: '/locations/:location/next/list',
+      name: 'locationNextList',
+      props: {
+        viewInfo: {
+          depth: 2,
+          displayedName: 'List',
+          pathName: 'locationNextList'
+        }
+      },
+      component: () => import('./views/Locations/LocationNextList.vue')
     }
   ]
 })

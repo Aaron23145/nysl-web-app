@@ -2,6 +2,7 @@
   <GameDetail
     :game="gamesOfLocation($route.params.location)[0]"
     from="location"
+    :next-view="{ name: 'locationNextList', params: { location: $route.params.location } }"
   />
 </template>
 

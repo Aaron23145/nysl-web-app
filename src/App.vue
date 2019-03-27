@@ -8,7 +8,7 @@
       <TheView />
     </div>
     <div class="invalid-device">
-      This app doesn't support desktop sized screens or landscape mode.
+      This app doesn't support tablet or desktop sized screens or landscape mode.
     </div>
   </div>
 </template>
@@ -75,7 +75,11 @@ export default {
   --main-lighter-blue: #86E0DD;
 }
 
-html, body, .app, .app > div {
+html,
+body,
+.app,
+.valid-device,
+.invalid-device {
   height: 100%;
 }
 
@@ -84,7 +88,7 @@ body {
   font-family: 'Ubuntu', sans-serif;
 }
 
-.app {
+.valid-device {
   display: flex;
   flex-direction: column;
 }
@@ -93,7 +97,7 @@ body {
   display: none;
 }
 
-@media (min-width: 992px), (orientation: landscape) {
+@media (min-width: 768px), (orientation: landscape) {
   .valid-device {
     display: none;
   }
