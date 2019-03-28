@@ -1,12 +1,14 @@
 <template>
-  <div class="day-list flex-button-column">
-    <button
+  <div>
+    <router-link
       v-for="date of datesWithGames"
       :key="`${date.month}${date.day}`"
+      :to="{ name: 'daySelect', params: {date: `${date.month}/${date.day}`} }"
+      tag="button"
       class="button button--small"
     >
       {{ date.day }} of {{ formatMonth(date.month) }}
-    </button>
+    </router-link>
   </div>
 </template>
 

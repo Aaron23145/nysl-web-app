@@ -84,6 +84,18 @@ export default new Router({
       component: () => import('./views/Days/DayList.vue')
     },
     {
+      path: '/days/:date',
+      name: 'daySelect',
+      props: {
+        viewInfo: {
+          depth: 1,
+          displayedName: 'Select',
+          pathName: 'daySelect'
+        }
+      },
+      component: () => import('./views/Days/DaySelect.vue')
+    },
+    {
       path: '/locations',
       name: 'locationList',
       props: {

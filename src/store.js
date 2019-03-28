@@ -46,6 +46,11 @@ export default new Vuex.Store({
       return state.data.filter(function (game) {
         return game.location === location
       })
+    },
+    gamesOfDate: (state) => (date) => {
+      return state.data.filter(function (game) {
+        return game.date === date
+      })
     }
   },
   mutations: {
