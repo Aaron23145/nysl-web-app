@@ -1,12 +1,14 @@
 <template>
   <div>
-    <button
-      v-for="game of gamesOfDate($route.params.date)"
+    <router-link
+      v-for="(game, index) of gamesOfDate($route.params.date)"
       :key="game.location"
+      :to="{ name: 'dayNext', params: {date: $route.params.date, game_index: index} }"
+      tag="button"
       class="button button--small"
     >
       {{ formatTeams(game.teams) }}
-    </button>
+    </router-link>
   </div>
 </template>
 

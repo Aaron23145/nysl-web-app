@@ -96,6 +96,18 @@ export default new Router({
       component: () => import('./views/Days/DaySelect.vue')
     },
     {
+      path: '/days/:date/:game_index',
+      name: 'dayNext',
+      props: {
+        viewInfo: {
+          depth: 1,
+          displayedName: 'Select',
+          pathName: 'dayNext'
+        }
+      },
+      component: () => import('./views/Days/DayNext.vue')
+    },
+    {
       path: '/locations',
       name: 'locationList',
       props: {
