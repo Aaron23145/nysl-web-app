@@ -8,7 +8,17 @@
       <TheView />
     </div>
     <div class="invalid-device">
-      <div class="invalid-device__error-msg">This app doesn't support tablet or desktop sized screens or landscape mode.</div>
+      <div class="invalid-device__error-msg">
+        This app doesn't support tablet or desktop sized screens or landscape mode.
+        If you're in desktop, you can
+        <a
+          href="https://developers.google.com/web/tools/chrome-devtools/device-mode/"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          Simulate Mobile Devices with Device Mode
+        </a>.
+      </div>
     </div>
   </div>
 </template>
@@ -115,6 +125,12 @@ body {
   margin: 0 50px;
   text-align: center;
   font-size: 1.5rem;
+}
+
+.invalid-device__error-msg a {
+  color: #1B6DB9;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .button {
