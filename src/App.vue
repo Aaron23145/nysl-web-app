@@ -8,7 +8,7 @@
       <TheView />
     </div>
     <div class="invalid-device">
-      This app doesn't support tablet or desktop sized screens or landscape mode.
+      <div class="invalid-device__error-msg">This app doesn't support tablet or desktop sized screens or landscape mode.</div>
     </div>
   </div>
 </template>
@@ -103,8 +103,18 @@ body {
   }
 
   .invalid-device {
-    display: block;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
   }
+}
+
+.invalid-device__error-msg {
+  color: #BD1919;
+  margin: 0 50px;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 .button {
