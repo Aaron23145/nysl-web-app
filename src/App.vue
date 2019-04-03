@@ -10,7 +10,7 @@
     <div class="invalid-device">
       <div class="invalid-device__error-msg">
         This app doesn't support tablet or desktop sized screens or landscape mode.
-        If you're in desktop, you can
+        If you're on desktop, you can
         <a
           href="https://developers.google.com/web/tools/chrome-devtools/device-mode/"
           target="_blank"

@@ -1,12 +1,12 @@
 # NYSL Web App
 
-A web app that consumes the [NYSL Rest API](https://github.com/Aaron23145/nysl-rest-api) and shows game info. Only works for mobile sized screens and in portrait mode. Try it live here: [NYSL Web App on Heroku](https://nysl-web-app.herokuapp.com/).
+A web app that consumes the [NYSL Rest API](https://github.com/Aaron23145/nysl-rest-api) and shows game info. Only works on mobile sized screens and on portrait mode. Try it live here: [NYSL Web App on Heroku](https://nysl-web-app.herokuapp.com/).
 
-It's recommended to install the app on the mobile when entering it for the first time for a better experiencie, because it has a little PWA support (not offline mode though).
+It's recommended to install the app on the mobile when entering it for the first time for a better experience, because it has a little PWA support (not offline mode though).
 
 ## Install
 
-To run it locally you will need Node, NPM (or Yarn) installed. Then, run the following commands:
+To run it locally you will need Node and NPM (or Yarn) installed. Then, run the following commands:
 
 ```sh
 npm install
