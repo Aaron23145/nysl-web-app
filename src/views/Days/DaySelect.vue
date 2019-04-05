@@ -24,6 +24,11 @@ export default {
   computed: mapGetters([
     'gamesOfDate'
   ]),
+  created () {
+    if (this.gamesOfDate(this.$route.params.date).length === 1) {
+      this.$router.push({ name: 'dayNext', params: { date: this.$route.params.date, game_index: 0, one_game: true } })
+    }
+  },
   methods: {
     formatTeams
   }

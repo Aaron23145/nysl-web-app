@@ -38,7 +38,7 @@
       tag="button"
       class="button"
     >
-      More Games
+      <slot>More Games</slot>
     </router-link>
     <span v-else>&nbsp;</span>
   </div>

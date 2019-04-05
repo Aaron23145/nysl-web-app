@@ -1,8 +1,20 @@
 <template>
-  <GameDetail
-    :game="gamesOfDate($route.params.date)[$route.params.game_index]"
-    :next-view="{ name: 'daySelect', params: {date: $route.params.date} }"
-  />
+  <div>
+    <GameDetail
+      v-if="!$route.params.one_game"
+      :game="gamesOfDate($route.params.date)[$route.params.game_index]"
+      :next-view="{ name: 'daySelect', params: {date: $route.params.date} }"
+    >
+      Back
+    </GameDetail>
+    <GameDetail
+      v-else
+      :game="gamesOfDate($route.params.date)[$route.params.game_index]"
+      :next-view="{ name: 'dayList' }"
+    >
+      Back
+    </GameDetail>
+  </div>
 </template>
 
 <script>
