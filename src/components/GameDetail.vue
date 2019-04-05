@@ -45,34 +45,34 @@
 </template>
 
 <script>
-import LocationMap from './LocationMap'
-import { formatMonth, formatDay, formatTeams } from '../utils.js'
+import LocationMap from './LocationMap.vue';
+import { formatMonth, formatDay, formatTeams } from '../utils';
 
 export default {
   name: 'GameDetail',
   components: {
-    LocationMap
+    LocationMap,
   },
   props: {
     game: {
       type: Object,
-      required: true
+      required: true,
     },
     from: {
       type: String,
-      default: null
+      default: null,
     },
     nextView: {
       type: Object,
-      default: null
-    }
+      default: null,
+    },
   },
   methods: {
     formatMonth,
     formatDay,
-    formatTeams
-  }
-}
+    formatTeams,
+  },
+};
 </script>
 
 <style>

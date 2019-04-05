@@ -13,17 +13,17 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters } from 'vuex';
 
-import { breadcrumbView } from '../../mixins'
+import { breadcrumbView } from '../../mixins';
 
 export default {
   name: 'LocationList',
   mixins: [breadcrumbView],
   computed: mapGetters([
-    'locations'
-  ])
-}
+    'locations',
+  ]),
+};
 </script>
 
 <style>

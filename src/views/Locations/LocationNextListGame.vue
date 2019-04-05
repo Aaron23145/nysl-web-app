@@ -6,19 +6,19 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters } from 'vuex';
 
-import { breadcrumbView } from '../../mixins.js'
-import GameDetail from '../../components/GameDetail'
+import { breadcrumbView } from '../../mixins';
+import GameDetail from '../../components/GameDetail.vue';
 
 export default {
   name: 'LocationNextListGame',
   components: {
-    GameDetail
+    GameDetail,
   },
   mixins: [breadcrumbView],
   computed: mapGetters([
-    'gamesOfLocation'
-  ])
-}
+    'gamesOfLocation',
+  ]),
+};
 </script>

@@ -5,6 +5,6 @@ module.exports = {
     name: 'NYSL Game Information',
     themeColor: '#047073',
     msTileColor: '#047073',
-    orientation: 'portrait-primary'
-  }
-}
+    orientation: 'portrait-primary',
+  },
+};

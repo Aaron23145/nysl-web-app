@@ -1,8 +1,8 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Vue from 'vue';
+import Router from 'vue-router';
+import Home from './views/Home.vue';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   mode: 'history',
@@ -11,17 +11,17 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
     },
     {
       path: '/loading',
       name: 'loading',
-      component: () => import('./views/Loading.vue')
+      component: () => import('./views/Loading.vue'),
     },
     {
       path: '/error/network',
       name: 'errorNetwork',
-      component: () => import('./views/ErrorNetwork.vue')
+      component: () => import('./views/ErrorNetwork.vue'),
     },
     {
       path: '/teams',
@@ -30,10 +30,10 @@ export default new Router({
         viewInfo: {
           depth: 0,
           displayedName: 'Teams',
-          pathName: 'teamList'
-        }
+          pathName: 'teamList',
+        },
       },
-      component: () => import('./views/Teams/TeamList.vue')
+      component: () => import('./views/Teams/TeamList.vue'),
     },
     {
       path: '/teams/:team/next',
@@ -42,10 +42,10 @@ export default new Router({
         viewInfo: {
           depth: 1,
           displayedName: 'Next',
-          pathName: 'teamNext'
-        }
+          pathName: 'teamNext',
+        },
       },
-      component: () => import('./views/Teams/TeamNext.vue')
+      component: () => import('./views/Teams/TeamNext.vue'),
     },
     {
       path: '/teams/:team/next/list',
@@ -54,10 +54,10 @@ export default new Router({
         viewInfo: {
           depth: 2,
           displayedName: 'List',
-          pathName: 'teamNextList'
-        }
+          pathName: 'teamNextList',
+        },
       },
-      component: () => import('./views/Teams/TeamNextList.vue')
+      component: () => import('./views/Teams/TeamNextList.vue'),
     },
     {
       path: '/teams/:team/next/list/:game_index',
@@ -66,10 +66,10 @@ export default new Router({
         viewInfo: {
           depth: 3,
           displayedName: 'Game',
-          pathName: 'teamNextListGame'
-        }
+          pathName: 'teamNextListGame',
+        },
       },
-      component: () => import('./views/Teams/TeamNextListGame.vue')
+      component: () => import('./views/Teams/TeamNextListGame.vue'),
     },
     {
       path: '/days',
@@ -78,10 +78,10 @@ export default new Router({
         viewInfo: {
           depth: 0,
           displayedName: 'Days',
-          pathName: 'dayList'
-        }
+          pathName: 'dayList',
+        },
       },
-      component: () => import('./views/Days/DayList.vue')
+      component: () => import('./views/Days/DayList.vue'),
     },
     {
       path: '/days/:date',
@@ -90,10 +90,10 @@ export default new Router({
         viewInfo: {
           depth: 1,
           displayedName: 'Select',
-          pathName: 'daySelect'
-        }
+          pathName: 'daySelect',
+        },
       },
-      component: () => import('./views/Days/DaySelect.vue')
+      component: () => import('./views/Days/DaySelect.vue'),
     },
     {
       path: '/days/:date/:game_index',
@@ -102,10 +102,10 @@ export default new Router({
         viewInfo: {
           depth: 1,
           displayedName: 'Select',
-          pathName: 'dayNext'
-        }
+          pathName: 'dayNext',
+        },
       },
-      component: () => import('./views/Days/DayNext.vue')
+      component: () => import('./views/Days/DayNext.vue'),
     },
     {
       path: '/locations',
@@ -114,10 +114,10 @@ export default new Router({
         viewInfo: {
           depth: 0,
           displayedName: 'Locations',
-          pathName: 'locationList'
-        }
+          pathName: 'locationList',
+        },
       },
-      component: () => import('./views/Locations/LocationList.vue')
+      component: () => import('./views/Locations/LocationList.vue'),
     },
     {
       path: '/locations/:location/next',
@@ -126,10 +126,10 @@ export default new Router({
         viewInfo: {
           depth: 1,
           displayedName: 'Next',
-          pathName: 'locationNext'
-        }
+          pathName: 'locationNext',
+        },
       },
-      component: () => import('./views/Locations/LocationNext.vue')
+      component: () => import('./views/Locations/LocationNext.vue'),
     },
     {
       path: '/locations/:location/next/list',
@@ -138,10 +138,10 @@ export default new Router({
         viewInfo: {
           depth: 2,
           displayedName: 'List',
-          pathName: 'locationNextList'
-        }
+          pathName: 'locationNextList',
+        },
       },
-      component: () => import('./views/Locations/LocationNextList.vue')
+      component: () => import('./views/Locations/LocationNextList.vue'),
     },
     {
       path: '/locations/:location/next/list/:game_index',
@@ -150,10 +150,10 @@ export default new Router({
         viewInfo: {
           depth: 3,
           displayedName: 'Game',
-          pathName: 'locationNextListGame'
-        }
+          pathName: 'locationNextListGame',
+        },
       },
-      component: () => import('./views/Locations/LocationNextListGame.vue')
-    }
-  ]
-})
+      component: () => import('./views/Locations/LocationNextListGame.vue'),
+    },
+  ],
+});

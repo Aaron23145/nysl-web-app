@@ -24,49 +24,49 @@
 </template>
 
 <script>
-import TheTitles from './components/TheTitles'
-import TheBreadcrumb from './components/TheBreadcrumb'
-import TheView from './components/TheView'
+import { mapState, mapMutations } from 'vuex';
+import axios from 'axios';
+import TheTitles from './components/TheTitles.vue';
+import TheBreadcrumb from './components/TheBreadcrumb.vue';
+import TheView from './components/TheView.vue';
 
-import { mapState, mapMutations } from 'vuex'
-import axios from 'axios'
 
-const API_URL = 'https://nysl-rest-api.herokuapp.com/'
+const API_URL = 'https://nysl-rest-api.herokuapp.com/';
 
 export default {
   name: 'App',
   components: {
     TheTitles,
     TheBreadcrumb,
-    TheView
+    TheView,
   },
   computed: mapState([
-    'status'
+    'status',
   ]),
-  created () {
+  created() {
     if (this.status === 'loading') {
-      this.$router.replace({ name: 'loading' })
+      this.$router.replace({ name: 'loading' });
 
-      axios.get(API_URL).then(response => {
-        this.dataLoaded()
-        this.saveData(response.data)
-        this.$router.replace({ name: 'home' })
-      }).catch(error => {
-        this.dataError()
-        console.error('An error ocurred:')
-        console.error(error)
-        this.$router.replace({ name: 'errorNetwork' })
-      })
+      axios.get(API_URL).then((response) => {
+        this.dataLoaded();
+        this.saveData(response.data);
+        this.$router.replace({ name: 'home' });
+      }).catch((error) => {
+        this.dataError();
+        console.error('An error ocurred:');
+        console.error(error);
+        this.$router.replace({ name: 'errorNetwork' });
+      });
     } else if (this.status === 'error') {
-      this.$router.replace({ name: 'errorNetwork' })
+      this.$router.replace({ name: 'errorNetwork' });
     }
   },
   methods: mapMutations([
     'dataLoaded',
     'dataError',
-    'saveData'
-  ])
-}
+    'saveData',
+  ]),
+};
 </script>
 
 <style>

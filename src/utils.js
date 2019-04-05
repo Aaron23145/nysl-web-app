@@ -8,42 +8,43 @@ const MONTHS = {
   '07': 'July',
   '08': 'August',
   '09': 'September',
-  '10': 'October',
-  '11': 'November',
-  '12': 'December'
+  10: 'October',
+  11: 'November',
+  12: 'December',
+};
+
+export function formatMonth(monthNumber) {
+  return MONTHS[monthNumber];
 }
 
-export function formatMonth (monthNumber) {
-  return MONTHS[monthNumber]
-}
-
-export function formatDay (dayNumber) {
+export function formatDay(dayNumber) {
+  let day = dayNumber;
   if (Number(dayNumber) < 10) {
-    dayNumber = dayNumber.slice(1)
+    day = dayNumber.slice(1);
   }
 
   switch (dayNumber.slice(-1)) {
     case '1':
-      return `${dayNumber}st`
+      return `${day}st`;
     case '2':
-      return `${dayNumber}nd`
+      return `${day}nd`;
     case '3':
-      return `${dayNumber}rd`
+      return `${day}rd`;
     default:
-      return `${dayNumber}th`
+      return `${day}th`;
   }
 }
 
-export function formatDate (date, separator = ' ') {
-  const [month, day] = date.split('/')
-  return `${formatMonth(month)}${separator}${formatDay(day)}`
+export function formatDate(date, separator = ' ') {
+  const [month, day] = date.split('/');
+  return `${formatMonth(month)}${separator}${formatDay(day)}`;
 }
 
-export function formatTeams (teams, separator = ' vs ') {
-  const [team1, team2] = teams
-  return `${team1}${separator}${team2}`
+export function formatTeams(teams, separator = ' vs ') {
+  const [team1, team2] = teams;
+  return `${team1}${separator}${team2}`;
 }
 
-export function removeDuplicates (array) {
-  return [...new Set(array)]
+export function removeDuplicates(array) {
+  return [...new Set(array)];
 }

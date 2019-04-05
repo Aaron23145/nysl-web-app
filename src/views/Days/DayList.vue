@@ -15,7 +15,14 @@
       <router-link
         v-else
         :key="`${date.month}${date.day}`"
-        :to="{ name: 'dayNext', params: { date: `${date.month}/${date.day}`, game_index: 0, one_game: true } }"
+        :to="{
+          name: 'dayNext',
+          params: {
+            date: `${date.month}/${date.day}`,
+            game_index: 0,
+            one_game: true,
+          },
+        }"
         tag="button"
         class="button button--small"
       >
@@ -26,10 +33,10 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters } from 'vuex';
 
-import { breadcrumbView } from '../../mixins'
-import { formatMonth } from '../../utils.js'
+import { breadcrumbView } from '../../mixins';
+import { formatMonth } from '../../utils';
 
 export default {
   name: 'DayList',
@@ -37,11 +44,11 @@ export default {
   computed: {
     ...mapGetters([
       'datesWithGames',
-      'gamesOfDate'
-    ])
+      'gamesOfDate',
+    ]),
   },
   methods: {
-    formatMonth
-  }
-}
+    formatMonth,
+  },
+};
 </script>

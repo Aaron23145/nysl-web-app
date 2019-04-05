@@ -13,24 +13,24 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters } from 'vuex';
 
-import { breadcrumbView } from '../../mixins.js'
-import { formatTeams } from '../../utils.js'
+import { breadcrumbView } from '../../mixins';
+import { formatTeams } from '../../utils';
 
 export default {
   name: 'DaySelect',
   mixins: [breadcrumbView],
   computed: mapGetters([
-    'gamesOfDate'
+    'gamesOfDate',
   ]),
-  created () {
+  created() {
     if (this.gamesOfDate(this.$route.params.date).length === 1) {
-      this.$router.push({ name: 'dayNext', params: { date: this.$route.params.date, game_index: 0, one_game: true } })
+      this.$router.push({ name: 'dayNext', params: { date: this.$route.params.date, game_index: 0, one_game: true } });
     }
   },
   methods: {
-    formatTeams
-  }
-}
+    formatTeams,
+  },
+};
 </script>

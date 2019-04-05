@@ -1,18 +1,18 @@
-import { mapActions } from 'vuex'
+import { mapActions } from 'vuex';
 
-export const breadcrumbView = {
+export const breadcrumbView = { // eslint-disable-line import/prefer-default-export
   props: {
     viewInfo: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   methods: mapActions([
-    'setView'
+    'setView',
   ]),
-  beforeRouteEnter (to, from, next) {
-    next(vm => {
-      vm.setView(vm)
-    })
-  }
-}
+  beforeRouteEnter(to, from, next) {
+    next((vm) => {
+      vm.setView(vm);
+    });
+  },
+};

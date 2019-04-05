@@ -1,17 +1,17 @@
 module.exports = {
   root: true,
   env: {
-    node: true
+    node: true,
   },
-  'extends': [
+  extends: [
     'plugin:vue/recommended',
-    '@vue/standard'
+    '@vue/airbnb',
   ],
   rules: {
     'no-console': 'off',
-    'no-debugger': 'off'
+    'no-debugger': 'off',
   },
   parserOptions: {
-    parser: 'babel-eslint'
-  }
-}
+    parser: 'babel-eslint',
+  },
+};

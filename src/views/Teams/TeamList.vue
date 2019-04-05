@@ -13,15 +13,15 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters } from 'vuex';
 
-import { breadcrumbView } from '../../mixins'
+import { breadcrumbView } from '../../mixins';
 
 export default {
   name: 'TeamList',
   mixins: [breadcrumbView],
   computed: mapGetters([
-    'teams'
-  ])
-}
+    'teams',
+  ]),
+};
 </script>

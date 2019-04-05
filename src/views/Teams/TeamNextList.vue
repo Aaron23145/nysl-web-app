@@ -3,7 +3,13 @@
     <router-link
       v-for="(game, index) of gamesOfTeam($route.params.team).slice(1)"
       :key="game.date"
-      :to="{ name: 'teamNextListGame', params: { team: $route.params.team, game_index: index + 1 } }"
+      :to="{
+        name: 'teamNextListGame',
+        params: {
+          team: $route.params.team,
+          game_index: index + 1,
+        },
+      }"
       tag="button"
       class="button button--small"
     >
@@ -13,10 +19,10 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters } from 'vuex';
 
-import { breadcrumbView } from '../../mixins.js'
-import { formatDate, formatTeams } from '../../utils.js'
+import { breadcrumbView } from '../../mixins';
+import { formatDate, formatTeams } from '../../utils';
 
 export default {
   name: 'TeamNextList',
@@ -24,11 +30,11 @@ export default {
   },
   mixins: [breadcrumbView],
   computed: mapGetters([
-    'gamesOfTeam'
+    'gamesOfTeam',
   ]),
   methods: {
     formatDate,
-    formatTeams
-  }
-}
+    formatTeams,
+  },
+};
 </script>

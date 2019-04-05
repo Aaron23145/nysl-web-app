@@ -11,8 +11,8 @@
 
 <script>
 export default {
-  name: 'ErrorNetwork'
-}
+  name: 'ErrorNetwork',
+};
 </script>
 
 <style>
