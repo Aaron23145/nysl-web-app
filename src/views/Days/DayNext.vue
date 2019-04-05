@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="day-next">
     <GameDetail
       v-if="!$route.params.one_game"
       :game="gamesOfDate($route.params.date)[$route.params.game_index]"
@@ -34,3 +34,9 @@ export default {
   ]),
 };
 </script>
+
+<style>
+.day-next {
+  height: 100%;
+}
+</style>
