@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="button-list">
     <router-link
       v-for="location of locations"
       :key="location"

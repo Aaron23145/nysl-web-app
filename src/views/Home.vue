@@ -29,3 +29,12 @@ export default {
   name: 'Home'
 }
 </script>
+
+<style>
+@media (orientation: landscape) {
+  .home {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+</style>

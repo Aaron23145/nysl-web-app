@@ -40,4 +40,12 @@ export default {
   height: 150px;
   border: 0px;
 }
+
+@media (orientation: landscape) {
+  .location-map {
+    margin: 10px 0 0;
+    width: 45vw;
+    height: 100px;
+  }
+}
 </style>

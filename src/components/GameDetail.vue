@@ -9,15 +9,15 @@
         {{ formatTeams(game.teams) }}
       </div>
     </div>
-    <div>
+    <div class="game-detail__location-details">
       <div class="game-detail__small-text">
         Location
       </div>
       <div class="game-detail__big-text">
         {{ game.location }}
       </div>
-      <LocationMap :location="game.location" />
     </div>
+    <LocationMap :location="game.location" />
     <div>
       <div class="game-detail__big-text">
         {{ formatMonth(game.date.split('/')[0]) }}
@@ -95,5 +95,29 @@ export default {
 
 .game-detail__big-text {
   font-size: 1.5rem;
+}
+
+@media (orientation: landscape) {
+  .game-detail {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .game-detail > div {
+    width: 45vw;
+  }
+
+  .game-detail__location-details {
+    order: -1;
+  }
+
+  .game-detail__small-text {
+    font-size: 1rem;
+  }
+
+  .game-detail__big-text {
+    font-size: 1.3rem;
+  }
 }
 </style>

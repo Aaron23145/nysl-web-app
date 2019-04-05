@@ -9,7 +9,7 @@
     </div>
     <div class="invalid-device">
       <div class="invalid-device__error-msg">
-        This app doesn't support tablet or desktop sized screens or landscape mode.
+        This app doesn't support tablet or desktop sized screens.
         If you're on desktop, you can
         <a
           href="https://developers.google.com/web/tools/chrome-devtools/device-mode/"
@@ -98,6 +98,11 @@ body {
   font-family: 'Ubuntu', sans-serif;
 }
 
+header {
+  position: sticky;
+  top: 0;
+}
+
 .valid-device {
   display: flex;
   flex-direction: column;
@@ -105,19 +110,6 @@ body {
 
 .invalid-device {
   display: none;
-}
-
-@media (min-width: 768px), (orientation: landscape) {
-  .valid-device {
-    display: none;
-  }
-
-  .invalid-device {
-    display: flex;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-  }
 }
 
 .invalid-device__error-msg {
@@ -146,11 +138,33 @@ body {
   margin: 25px auto;
 }
 
+@media (orientation: landscape) {
+  .button {
+    height: 20vh;
+    width: 45%;
+  }
+}
+
 .button--small {
   font-size: 1.1rem;
   height: 7vh;
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+@media (orientation: landscape) {
+  .button--small {
+    height: 12.5vh;
+    width: 45%;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .button-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 .button:active {
@@ -166,5 +180,18 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+@media (min-width: 768px) and (orientation: portrait), (min-width: 824px) {
+  .valid-device {
+    display: none;
+  }
+
+  .invalid-device {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
 }
 </style>

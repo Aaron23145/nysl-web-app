@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="button-list">
     <router-link
       v-for="(game, index) of gamesOfLocation($route.params.location).slice(1)"
       :key="game.date"
