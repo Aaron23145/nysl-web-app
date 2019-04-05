@@ -147,7 +147,7 @@ body {
 }
 
 .button--small {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   height: 7vh;
   margin-top: 5px;
   margin-bottom: 5px;
