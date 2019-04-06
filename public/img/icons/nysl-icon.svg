@@ -1,0 +1,22 @@
+<svg width="256" height="256" xmlns="http://www.w3.org/2000/svg">
+
+ <title/>
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <circle stroke-width="8px" stroke-miterlimit="10" stroke="#047073" fill="none" id="svg_1" r="72.07" cy="80.5" cx="171.96" class="cls-1"/>
+  <line stroke-width="8px" stroke-miterlimit="10" stroke="#047073" fill="none" id="svg_2" y2="29.09" y1="131.45" x2="120.96" x1="223.32" class="cls-1"/>
+  <line stroke-width="8px" stroke-miterlimit="10" stroke="#047073" fill="none" id="svg_3" y2="131.45" y1="29.09" x2="120.96" x1="223.32" class="cls-1"/>
+  <path stroke-width="8px" stroke-miterlimit="10" stroke="#047073" fill="none" id="svg_4" d="m244.110001,77.07a58.360001,58.360001 0 0 1 -68.430008,-68.42" class="cls-1"/>
+  <path stroke-width="8px" stroke-miterlimit="10" stroke="#047073" fill="none" id="svg_5" d="m168.589996,152.589996a58.369999,58.369999 0 0 0 -68.429993,-68.419998" class="cls-1"/>
+  <line stroke-width="8px" stroke-miterlimit="10" stroke="#047073" fill="none" id="svg_6" y2="124.14" y1="38.31" x2="27.69" x1="113.53" class="cls-1"/>
+  <line stroke-width="8px" stroke-miterlimit="10" stroke="#047073" fill="none" id="svg_7" y2="194.84" y1="113.31" x2="8" x1="89.53" class="cls-1"/>
+  <line stroke-width="8px" stroke-miterlimit="10" stroke="#047073" fill="none" id="svg_8" y2="202.84" y1="162.31" x2="97" x1="137.53" class="cls-1"/>
+  <line stroke-width="8px" stroke-miterlimit="10" stroke="#047073" fill="none" id="svg_9" y2="151.84" y1="135.31" x2="92" x1="108.53" class="cls-1"/>
+  <line stroke-width="8px" stroke-miterlimit="10" stroke="#047073" fill="none" id="svg_10" y2="197.04" y1="160.31" x2="46.79" x1="83.53" class="cls-1"/>
+  <line stroke-width="8px" stroke-miterlimit="10" stroke="#047073" fill="none" id="svg_11" y2="248.09" y1="146" x2="99.98" x1="202.06" class="cls-1"/>
+ </g>
+</svg>
