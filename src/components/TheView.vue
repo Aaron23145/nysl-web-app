@@ -15,5 +15,6 @@ export default {
   margin: 10px 10px 0;
   flex: 1;
   overflow: hidden;
+  position: relative;
 }
 </style>

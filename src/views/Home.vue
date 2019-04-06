@@ -5,7 +5,7 @@
       :to="{ name: 'teamList' }"
       class="button"
     >
-      Select your team
+      Select a team
     </router-link>
     <router-link
       tag="button"
@@ -19,7 +19,21 @@
       :to="{ name: 'locationList' }"
       class="button"
     >
-      Select your location
+      Select a location
+    </router-link>
+    <router-link
+      tag="button"
+      :to="{ name: 'chat' }"
+      class="button"
+    >
+      Access chat
+    </router-link>
+    <router-link
+      tag="button"
+      :to="{ name: 'help' }"
+      class="button button--inline home__help-button"
+    >
+      ?
     </router-link>
   </div>
 </template>
@@ -31,10 +45,32 @@ export default {
 </script>
 
 <style>
+.home {
+  text-align: right;
+}
+
+.home > .button {
+  margin: 5px auto;
+}
+
+.home__help-button {
+  position: absolute;
+  bottom: 20px;
+  right: 10%;
+  display: inline-block;
+  width: initial;
+  height: initial;
+  padding: 10px 20px;
+}
+
 @media (orientation: landscape) {
   .home {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .home__help-button {
+    right: 2.5%;
   }
 }
 </style>

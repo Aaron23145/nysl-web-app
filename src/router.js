@@ -155,5 +155,29 @@ export default new Router({
       },
       component: () => import('./views/Locations/LocationNextListGame.vue'),
     },
+    {
+      path: '/chat',
+      name: 'chat',
+      props: {
+        viewInfo: {
+          depth: 0,
+          displayedName: 'Chat',
+          pathName: 'chat',
+        },
+      },
+      component: () => import('./views/Chat.vue'),
+    },
+    {
+      path: '/help',
+      name: 'help',
+      props: {
+        viewInfo: {
+          depth: 0,
+          displayedName: 'Help',
+          pathName: 'help',
+        },
+      },
+      component: () => import('./views/Help.vue'),
+    },
   ],
 });
