@@ -26,7 +26,7 @@
         </li>
         <li>
           <span>
-            <strong>Select a location</strong>: allows you to search for game information by
+            <strong>Selecting a location</strong>: allows you to search for game information by
             selecting the location. First you will get information about the next game that
             will ocurr in that location. By pressing "more games", you'll be able to view
             the rest of the games that will ocurr in the same place this season.
