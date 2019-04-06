@@ -12,7 +12,8 @@ export default {
 
 <style>
 .the-view {
-  margin: 10px;
+  margin: 10px 10px 0;
   flex: 1;
+  overflow: hidden;
 }
 </style>

@@ -35,17 +35,19 @@ export default {
 
 <style>
 .location-map {
-  margin: 10px auto 0;
+  margin: 10px auto;
   width: 75vw;
   height: 150px;
   border: 0px;
+  flex-grow: 1;
 }
 
 @media (orientation: landscape) {
   .location-map {
-    margin: 10px 0 0;
+    margin: 10px 0;
     width: 45vw;
     height: 100px;
+    flex-grow: 0;
   }
 }
 </style>

@@ -142,6 +142,7 @@ header {
   .button {
     height: 20vh;
     width: 45%;
+    margin: 5px auto;
   }
 }
 

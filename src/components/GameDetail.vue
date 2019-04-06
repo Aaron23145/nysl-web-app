@@ -106,6 +106,7 @@ export default {
 
   .game-detail > div {
     width: 45vw;
+    margin-bottom: 5px;
   }
 
   .game-detail__location-details {
