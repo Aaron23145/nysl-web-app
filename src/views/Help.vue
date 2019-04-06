@@ -34,7 +34,9 @@
         </li>
       </ul>
     </p>
-    <h4 class="help__section-title">How to use the chat?</h4>
+    <h4 class="help__section-title">
+      How to use the chat?
+    </h4>
     <p class="help__paragraph">
       WIP
     </p>
