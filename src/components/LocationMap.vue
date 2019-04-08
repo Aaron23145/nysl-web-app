@@ -37,7 +37,6 @@ export default {
 .location-map {
   margin: 10px auto;
   width: 75vw;
-  height: 150px;
   border: 0px;
   flex-grow: 1;
 }

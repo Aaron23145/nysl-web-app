@@ -2,8 +2,7 @@
   <div class="game-detail">
     <div>
       <div class="game-detail__small-text">
-        <span v-if="!from">&nbsp;</span>
-        <span v-else>Next {{ from | capitalize }} Game</span>
+        <span v-if="from">Next {{ from | capitalize }} Game</span>
       </div>
       <div class="game-detail__big-text">
         {{ formatTeams(game.teams) }}
@@ -36,11 +35,10 @@
       v-if="nextView"
       :to="nextView"
       tag="button"
-      class="button"
+      class="button game-detail__button"
     >
       <slot>More Games</slot>
     </router-link>
-    <span v-else>&nbsp;</span>
   </div>
 </template>
 
@@ -95,6 +93,10 @@ export default {
 
 .game-detail__big-text {
   font-size: 1.5rem;
+}
+
+.game-detail__button {
+  margin: 5px auto;
 }
 
 @media (orientation: landscape) {
