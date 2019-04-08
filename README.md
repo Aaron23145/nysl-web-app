@@ -4,6 +4,15 @@ A web app that consumes the [NYSL Rest API](https://github.com/Aaron23145/nysl-r
 
 It's recommended to install the app on the mobile when entering it for the first time for a better experience, because it has a little PWA support (not offline mode though).
 
+## Features
+
+- View NYSL games information comfortably. You can look for games selecting by team, location or day.
+- Single Page Application to reduce the loading times.
+- UI designed for mobile devices to provide a good user experience, with portrait and landscape mode.
+- Installable in mobile devices to make it look like a native app.
+- Authentication system (WIP).
+- Chat to comunicate between the NYSL users (WIP).
+
 ## Install
 
 To run it locally you will need Node and NPM (or Yarn) installed. Then, run the following commands:
