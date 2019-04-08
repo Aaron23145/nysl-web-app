@@ -4,6 +4,10 @@ A web app that consumes the [NYSL Rest API](https://github.com/Aaron23145/nysl-r
 
 It's recommended to install the app on the mobile when entering it for the first time for a better experience, because it has a little PWA support (not offline mode though).
 
+## How to install the NYSL app in mobile devices?
+
+In Google Chrome, you have to [enter the App](https://nysl-web-app.herokuapp.com/) and open the options inside it (by pressing the three vertical points button located in the upper right corner). Then, just press the "Add to Home Screen" option and accept the installation. Now you can access the NYSL App through your home screen menu.
+
 ## Features
 
 - View NYSL games information comfortably. You can look for games selecting by team, location or day.
