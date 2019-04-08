@@ -1,13 +1,13 @@
 <template>
   <div class="button-list">
     <router-link
-      v-for="(game, index) of gamesOfLocation($route.params.location).slice(1)"
+      v-for="(game, index) of gamesOfLocation($route.params.location)"
       :key="game.date"
       :to="{
         name: 'locationNextListGame',
         params: {
           location: $route.params.location,
-          game_index: index + 1,
+          game_index: index,
         },
       }"
       tag="button"
