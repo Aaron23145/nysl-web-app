@@ -26,8 +26,6 @@ import { formatDate, formatTeams } from '../../utils';
 
 export default {
   name: 'LocationNextList',
-  components: {
-  },
   mixins: [breadcrumbView],
   computed: mapGetters([
     'gamesOfLocation',

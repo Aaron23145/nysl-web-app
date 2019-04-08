@@ -3,19 +3,16 @@
     <template
       v-for="date of datesWithGames"
     >
-      <router-link
-        v-if="gamesOfDate(`${date.month}/${date.day}`).length > 1"
+      <LinkToListOrDetail
         :key="`${date.month}${date.day}`"
-        :to="{ name: 'daySelect', params: {date: `${date.month}/${date.day}`} }"
-        tag="button"
-        class="button button--small"
-      >
-        {{ date.day }} of {{ formatMonth(date.month) }}
-      </router-link>
-      <router-link
-        v-else
-        :key="`${date.month}${date.day}`"
-        :to="{
+        :list="gamesOfDate(`${date.month}/${date.day}`)"
+        :to-list="{
+          name: 'daySelect',
+          params: {
+            date: `${date.month}/${date.day}`
+          },
+        }"
+        :to-detail="{
           name: 'dayNext',
           params: {
             date: `${date.month}/${date.day}`,
@@ -23,11 +20,9 @@
             one_game: true,
           },
         }"
-        tag="button"
-        class="button button--small"
       >
         {{ date.day }} of {{ formatMonth(date.month) }}
-      </router-link>
+      </LinkToListOrDetail>
     </template>
   </div>
 </template>
@@ -37,9 +32,13 @@ import { mapGetters } from 'vuex';
 
 import { breadcrumbView } from '../../mixins';
 import { formatMonth } from '../../utils';
+import LinkToListOrDetail from '../../components/LinkToListOrDetail.vue';
 
 export default {
   name: 'DayList',
+  components: {
+    LinkToListOrDetail,
+  },
   mixins: [breadcrumbView],
   computed: {
     ...mapGetters([
