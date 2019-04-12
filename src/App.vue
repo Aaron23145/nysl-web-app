@@ -31,7 +31,7 @@ import TheBreadcrumb from './components/TheBreadcrumb.vue';
 import TheView from './components/TheView.vue';
 
 
-const API_URL = 'https://nysl-rest-api.herokuapp.com/';
+const API_URL = 'https://nysl-rest-api.herokuapp.com/games/';
 
 export default {
   name: 'App',
@@ -49,7 +49,7 @@ export default {
 
       axios.get(API_URL).then((response) => {
         this.dataLoaded();
-        this.saveData(response.data);
+        this.saveData(response.data.result.gamesFound);
         this.$router.replace({ name: 'home' });
       }).catch((error) => {
         this.dataError();
