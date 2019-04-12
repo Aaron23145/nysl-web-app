@@ -30,7 +30,6 @@ import TheTitles from './components/TheTitles.vue';
 import TheBreadcrumb from './components/TheBreadcrumb.vue';
 import TheView from './components/TheView.vue';
 
-
 const API_URL = 'https://nysl-rest-api.herokuapp.com/games/';
 
 export default {
@@ -182,6 +181,60 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.title,
+.paragraph,
+.list {
+  margin: 5px 0;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.section-title {
+  margin: 25px 0;
+  font-size: 1.25rem;
+}
+
+.list {
+  padding-left: 15px;
+  list-style-type: square;
+  color: var(--main-blue);
+}
+
+.list > li {
+  margin-bottom: 5px;
+}
+
+.list > li > span {
+  color: black;
+}
+
+label {
+  display: block;
+  text-align: center;
+}
+
+input[type="text"],
+input[type="password"] {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+input[type="submit"] {
+  display: block;
+  margin: 0 auto;
+}
+
+@media (orientation: landscape) {
+  input[type="text"],
+  input[type="password"] {
+    width: 75%;
+  }
 }
 
 @media (min-width: 768px) and (orientation: portrait), (min-width: 824px) {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>Chat</h3>
+    <h3>Sign up</h3>
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 import { breadcrumbView } from '../mixins';
 
 export default {
-  name: 'Chat',
+  name: 'TheSignup',
   mixins: [breadcrumbView],
 };
 </script>

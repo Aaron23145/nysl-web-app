@@ -168,6 +168,30 @@ export default new Router({
       component: () => import('./views/Chat.vue'),
     },
     {
+      path: '/login',
+      name: 'login',
+      props: {
+        viewInfo: {
+          depth: 0,
+          displayedName: 'Login',
+          pathName: 'login',
+        },
+      },
+      component: () => import('./views/TheLogin.vue'),
+    },
+    {
+      path: '/signup',
+      name: 'signup',
+      props: {
+        viewInfo: {
+          depth: 0,
+          displayedName: 'Sign up',
+          pathName: 'signup',
+        },
+        component: () => import('./views/TheSignup.vue'),
+      },
+    },
+    {
       path: '/help',
       name: 'help',
       props: {

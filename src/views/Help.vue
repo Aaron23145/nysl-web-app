@@ -1,14 +1,14 @@
 <template>
   <div class="help">
-    <h3 class="help__title">
+    <h3 class="title">
       Help
     </h3>
-    <h4 class="help__section-title">
+    <h4 class="section-title">
       How to query games information?
     </h4>
-    <p class="help__paragraph">
+    <p class="paragraph">
       To query information about NYSL games you can use one of the three available modes:
-      <ul class="help__list">
+      <ul class="list">
         <li>
           <span>
             <strong>Selecting a team</strong>: allows you to search for game information by
@@ -34,10 +34,10 @@
         </li>
       </ul>
     </p>
-    <h4 class="help__section-title">
+    <h4 class="section-title">
       How to use the chat?
     </h4>
-    <p class="help__paragraph">
+    <p class="paragraph">
       WIP
     </p>
   </div>
@@ -51,35 +51,3 @@ export default {
   mixins: [breadcrumbView],
 };
 </script>
-
-<style>
-.help__title,
-.help__paragraph,
-.help__list {
-  margin: 5px 0;
-}
-
-.help__title {
-  text-align: center;
-  font-size: 1.5rem;
-}
-
-.help__section-title {
-  margin: 25px 0;
-  font-size: 1.25rem;
-}
-
-.help__list {
-  padding-left: 15px;
-  list-style-type: square;
-  color: var(--main-blue);
-}
-
-.help__list > li {
-  margin-bottom: 5px;
-}
-
-.help__list > li > span {
-  color: black;
-}
-</style>

@@ -10,6 +10,7 @@ export default new Vuex.Store({
   state: {
     status: 'loading',
     data: null,
+    login: null,
     breadcrumb: [],
   },
   getters: {
@@ -43,21 +44,23 @@ export default new Vuex.Store({
   },
   mutations: {
     dataLoaded(state) {
-      state.status = 'ready'; // eslint-disable-line no-param-reassign
+      state.status = 'ready';
     },
     dataError(state) {
-      state.status = 'error'; // eslint-disable-line no-param-reassign
+      state.status = 'error';
     },
     saveData(state, newData) {
-      state.data = newData; // eslint-disable-line no-param-reassign
+      state.data = newData;
     },
     resetBcToDepth(state, depth) {
       const onlyLessThan = (entry, index) => index < depth;
-      // eslint-disable-next-line no-param-reassign
       state.breadcrumb = state.breadcrumb.filter(onlyLessThan);
     },
     addViewToBc(state, view) {
       state.breadcrumb.push(view);
+    },
+    setLogin(state, loginObj) {
+      state.login = loginObj;
     },
   },
   actions: {

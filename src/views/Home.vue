@@ -23,7 +23,7 @@
     </router-link>
     <router-link
       tag="button"
-      :to="{ name: 'chat' }"
+      :to="{ name: login ? 'chat' : 'login' }"
       class="button"
     >
       Access chat
@@ -39,8 +39,13 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   name: 'Home',
+  computed: mapState([
+    'login',
+  ]),
 };
 </script>
 
