@@ -43,7 +43,7 @@ export default {
         },
       }).then((response) => {
         this.messages = (
-          response.data.result.messagesFound ? response.data.result.messagesFound : []
+          response.data.result.messagesFound ? response.data.result.messagesFound.reverse() : []
         );
       }).catch((err) => {
         console.error(err);
