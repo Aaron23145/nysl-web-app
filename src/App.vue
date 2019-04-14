@@ -9,15 +9,16 @@
     </div>
     <div class="invalid-device">
       <div class="invalid-device__error-msg">
-        This app doesn't support tablet or desktop sized screens.
-        If you're on desktop, you can
+        This app is designed to solve a problem for mobile users to visualize information about the
+        NYSL games comfortably. Due to that, this app doesn't support tablet or desktop sized
+        screens, because it isn't its goal. However, if you're on desktop, you can press F12 and
+        press the button indicated
         <a
-          href="https://developers.google.com/web/tools/chrome-devtools/device-mode/"
+          href="https://developers.google.com/web/tools/chrome-devtools/device-mode/#viewport"
           target="_blank"
           rel="noreferrer noopener"
-        >
-          Simulate Mobile Devices with Device Mode
-        </a>.
+        >here</a>
+        to turn on the simulation of mobile devices and try the NYSL web app.
       </div>
     </div>
   </div>
