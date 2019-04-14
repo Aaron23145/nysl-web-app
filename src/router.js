@@ -165,7 +165,7 @@ export default new Router({
           pathName: 'chat',
         },
       },
-      component: () => import('./views/Chat.vue'),
+      component: () => import('./views/TheChat.vue'),
     },
     {
       path: '/access_chat',
