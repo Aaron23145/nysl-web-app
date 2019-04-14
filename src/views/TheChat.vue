@@ -33,7 +33,7 @@ export default {
   ]),
   created() {
     this.getChatMessages();
-    setInterval(this.getChatMessages, 1000 * 60 * 10);
+    setInterval(this.getChatMessages, 1000 * 5);
   },
   methods: {
     getChatMessages() {
@@ -43,7 +43,9 @@ export default {
           'x-access-token': this.login.token,
         },
       }).then((response) => {
-        this.messages = response.data.result.messagesFound ? response.data.result.messagesFound : [];
+        this.messages = (
+          response.data.result.messagesFound ? response.data.result.messagesFound : []
+        );
       }).catch((err) => {
         console.error(err);
       });

@@ -27,6 +27,7 @@ export default {
     sendMessage(event) {
       event.preventDefault();
       if (this.content.trim().length) this.$emit('sendMessage', this.content);
+      this.content = '';
     },
   },
 };
