@@ -1,6 +1,6 @@
 <template>
   <div class="the-chat">
-    <TheChatMessagesContainer :messages="messages.reverse()" />
+    <TheChatMessagesContainer :messages="messages" />
     <TheChatInputBar @sendMessage="sendMessage" />
   </div>
 </template>
@@ -37,7 +37,6 @@ export default {
   },
   methods: {
     getChatMessages() {
-      console.log('Getting messages from server');
       axios.get(CHAT_MESSAGES_URI, {
         headers: {
           'x-access-token': this.login.token,
@@ -61,7 +60,6 @@ export default {
         this.getChatMessages();
       }).catch((err) => {
         console.error(err);
-        console.error(err.response);
       });
     },
   },
