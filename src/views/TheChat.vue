@@ -1,6 +1,6 @@
 <template>
   <div class="the-chat">
-    <TheChatMessagesContainer :messages="messages" />
+    <TheChatMessagesContainer :messages="messages.reverse()" />
     <TheChatInputBar @sendMessage="sendMessage" />
   </div>
 </template>
