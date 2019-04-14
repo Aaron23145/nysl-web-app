@@ -168,11 +168,23 @@ export default new Router({
       component: () => import('./views/Chat.vue'),
     },
     {
-      path: '/login',
-      name: 'login',
+      path: '/access_chat',
+      name: 'accessChat',
       props: {
         viewInfo: {
           depth: 0,
+          displayedName: 'Access Chat',
+          pathName: 'accessChat',
+        },
+      },
+      component: () => import('./views/TheAccessChat.vue'),
+    },
+    {
+      path: '/access_chat/login',
+      name: 'login',
+      props: {
+        viewInfo: {
+          depth: 1,
           displayedName: 'Login',
           pathName: 'login',
         },
@@ -180,16 +192,16 @@ export default new Router({
       component: () => import('./views/TheLogin.vue'),
     },
     {
-      path: '/signup',
+      path: '/access_chat/signup',
       name: 'signup',
       props: {
         viewInfo: {
-          depth: 0,
-          displayedName: 'Sign up',
+          depth: 1,
+          displayedName: 'Sign Up',
           pathName: 'signup',
         },
-        component: () => import('./views/TheSignup.vue'),
       },
+      component: () => import('./views/TheSignup.vue'),
     },
     {
       path: '/help',

@@ -21,13 +21,13 @@
     >
       Select a location
     </router-link>
-    <!-- <router-link
+    <router-link
       tag="button"
-      :to="{ name: login ? 'chat' : 'login' }"
+      :to="{ name: login ? 'chat' : 'accessChat' }"
       class="button"
     >
       Access chat
-    </router-link> -->
+    </router-link>
     <router-link
       tag="button"
       :to="{ name: 'help' }"

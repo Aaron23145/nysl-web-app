@@ -4,7 +4,10 @@
       Login
     </h3>
     <br>
-    <div class="the-login__error" v-if="requestError">
+    <div
+      v-if="requestError"
+      class="the-login__error"
+    >
       {{ requestError }}
     </div>
     <br>
@@ -56,6 +59,7 @@ export default {
     ]),
     login(event) {
       event.preventDefault();
+      this.requestError = false;
 
       axios.post(LOGIN_URI, {
         name: this.username,
@@ -63,7 +67,6 @@ export default {
       }).then((response) => {
         this.setLogin(response.data.result.userVerified);
         this.$router.push({ name: 'chat' });
-        this.requestError = false;
       }).catch((err) => {
         this.requestError = `Error ${err.response.status}: ${err.response.data.message}`;
       });
