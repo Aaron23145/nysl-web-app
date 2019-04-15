@@ -33,7 +33,7 @@ export default {
   ]),
   created() {
     this.getChatMessages();
-    setInterval(this.getChatMessages, 1000 * 5);
+    setInterval(this.getChatMessages, 1000 * 60 * 10);
   },
   methods: {
     getChatMessages() {
