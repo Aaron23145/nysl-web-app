@@ -1,7 +1,11 @@
 <template>
   <div class="the-chat-messages-container">
+    <div v-if="error">
+      Network error ocurred: {{ error }}.<br>
+      Please, reload and try to login again.
+    </div>
     <div
-      v-if="messages === null || !messages.length"
+      v-else-if="messages === null || !messages.length"
       class="the-chat-messages-container__no-data"
     >
       <template v-if="messages === null">
@@ -35,6 +39,10 @@ export default {
   props: {
     messages: {
       type: Array,
+      default: null,
+    },
+    error: {
+      type: Number,
       default: null,
     },
   },

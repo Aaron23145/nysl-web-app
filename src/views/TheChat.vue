@@ -1,6 +1,9 @@
 <template>
   <div class="the-chat">
-    <TheChatMessagesContainer :messages="messages" />
+    <TheChatMessagesContainer
+      :messages="messages"
+      :error="chatError"
+    />
     <TheChatInputBar @sendMessage="sendMessage" />
   </div>
 </template>
@@ -26,6 +29,7 @@ export default {
   data() {
     return {
       messages: null,
+      chatError: null,
     };
   },
   computed: mapState([
@@ -42,11 +46,12 @@ export default {
           'x-access-token': this.login.token,
         },
       }).then((response) => {
+        this.chatError = null;
         this.messages = (
           response.data.result.messagesFound ? response.data.result.messagesFound.reverse() : []
         );
       }).catch((err) => {
-        console.error(err);
+        this.chatError = err.response.status;
       });
     },
     sendMessage(message) {
@@ -57,9 +62,10 @@ export default {
           'x-access-token': this.login.token,
         },
       }).then(() => {
+        this.chatError = null;
         this.getChatMessages();
       }).catch((err) => {
-        console.error(err);
+        this.chatError = err.response.status;
       });
     },
   },
