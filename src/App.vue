@@ -231,13 +231,6 @@ input[type="submit"] {
   margin: 0 auto;
 }
 
-@media (orientation: landscape) {
-  input[type="text"],
-  input[type="password"] {
-    width: 75%;
-  }
-}
-
 @media (min-width: 768px) and (orientation: portrait), (min-width: 824px) {
   .valid-device {
     display: none;

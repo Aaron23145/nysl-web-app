@@ -85,10 +85,4 @@ export default {
   border: 1px solid var(--main-dark-pink);
   border-radius: 5px;
 }
-
-@media (orientation: landscape) {
-  .the-login__error {
-    width: 50%;
-  }
-}
 </style>

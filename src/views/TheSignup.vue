@@ -34,7 +34,6 @@
       >
     </form>
   </div>
-
 </template>
 
 <script>
@@ -87,11 +86,5 @@ export default {
   background: var(--main-pink);
   border: 1px solid var(--main-dark-pink);
   border-radius: 5px;
-}
-
-@media (orientation: landscape) {
-  .the-signup {
-    width: 50%;
-  }
 }
 </style>
